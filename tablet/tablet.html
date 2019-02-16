@@ -1,0 +1,1050 @@
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<style>
+    .container_main {
+        position: absolute;
+        top: 250px;
+        left: 600px;
+        width: 800px;
+        height: 567px;
+        background-image: url(img/tablet_frame.png);
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .screen {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 38px;
+        width: 656px;
+        height: 492px;
+        background-image: url(img/tablet_background.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center 56px;
+    }
+
+    .nav {
+        background-color: #ffffff;
+        height: 56px;
+        border-bottom: 4px solid #df4a24;
+
+    }
+
+    .nav-btn {
+        height: 100%;
+        background-color: #ffffff;
+        border: 0;
+        opacity: 0.7;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .nav-btn:hover {
+        opacity: 1.0;
+        -webkit-transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        -moz-transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .nav-btn-active {
+        opacity: 1.0;
+    }
+
+    .nav-btn-active::after {
+        content: "";
+        display: block;
+        background-image: url(img/tablet_icon_arrow.png);
+        width: 19px;
+        height: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -7px;
+    }
+
+    .delay {
+        height: 35px;
+        width: 1px;
+        margin-top: auto;
+        margin-bottom: auto;
+        background-color: #df4a24;
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #df4a24;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background-color: #f7f7f9;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .page_container {
+        height: 436px;
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .page {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        color: #fff;
+    }
+
+    .page_heading {
+        margin-top: 15px;
+    }
+
+    .page_main {
+        background-color: rgba(3, 27, 51, 0.9);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom: 2px solid #ffffff;
+        min-height: 300px;
+    }
+
+    .page_bottom {
+        background-color: #df4a24;
+        min-height: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        align-items: center;
+        display: flex;
+    }
+
+    .page_bottom_buttons {
+        height: 54px;
+    }
+
+    .orange_prepand {
+        background-color: #df4a24;
+    }
+
+    .input-group-prepend {
+        width: 5px;
+    }
+
+    .panel a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .panel_light {
+        background-color: #ffffff;
+        border-radius: 6px;
+        color: black;
+        margin-bottom: 12px;
+    }
+
+    .panel-heading {
+        background-color: #f7f7f9;
+        border-radius: 6px;
+    }
+
+    .panel-body {
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .judgment_icon {
+        margin-top: 13px;
+    }
+
+    #schedule_mandate {
+        position: absolute;
+        left: 12px;
+        margin-top: 30px;
+        height: 42px;
+        width: 120px;
+    }
+
+    #schedule_jail {
+        position: absolute;
+        left: 12px;
+        bottom: 0;
+        height: 42px;
+        width: 120px;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 10px;
+        border-radius: 4px;
+        background: #f7f7f9;
+        outline: none;
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+        margin-top: 7px;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 40px;
+        height: 25px;
+        border-radius: 6px;
+        background: #df4a24;
+        cursor: pointer;
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .slider::-moz-range-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 40px;
+        height: 22px;
+        border-radius: 6px;
+        background: #df4a24;
+        cursor: pointer;
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .schedule_offense_body {
+        height: 50px;
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .schedule_offense_checkbox {
+        width: 10%;
+        height: 100%;
+        float: left;
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-check {
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-check-input {
+        width: 20px;
+        height: 20px;
+        margin-top: 15px;
+    }
+
+    .schedule_offense_heading {
+        height: 50%;
+        width: 90%;
+        float: left;
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .schedule_offense_jail {
+        height: 50%;
+        width: 20%;
+        float: left;
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .schedule_offense_mane {
+        height: 50%;
+        width: 50%;
+        float: left;
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .schedule_offense_penalty_points {
+        height: 50%;
+        width: 20%;
+        float: left;
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+  
+    .wanted_list_selected{
+        position: relative;
+        z-index: 2;
+    }
+    
+    .wanted_list_unselected{
+        position: absolute;
+        left: 120px;
+        z-index: 1;
+        margin-top: 5px;
+        opacity: 0.8;
+    }
+    
+    
+    #change_wanted_page{
+        position: absolute;
+        z-index: 3;
+        background-color: transparent;
+        width:114px;
+        height: 36px;
+        top: 6px;
+        left: 250px;
+        cursor: pointer;
+    }
+    
+    .wanted_list{
+        position: relative;
+        z-index: 5;
+    }
+    
+    .page_heading_wanted{
+        position: relative;
+    }
+    
+
+</style>
+    
+    <button id="test" >TEST</button>
+    <button id="test2" >TEST2</button>
+
+<div class="container_main">
+
+    <div class="screen">
+        <nav class="nav nav-fill justify-content-center">
+            <button id="mandate" class="nav-btn nav-item">
+                <img src="img/tablet_icon_wystaw_mandat.png" alt="wystaw mandat">
+            </button>
+            <div class="delay"></div>
+            <button id="jail" class="nav-btn nav-item">
+                <img src="img/tablet_icon_wyslij_do_wiezienia.png" alt="wyślij do więzienia">
+            </button>
+            <div class="delay"></div>
+            <button id="file" class="nav-btn nav-item">
+                <img src="img/tablet_icon_kartoteka.png" alt="kartoteka">
+            </button>
+            <div class="delay"></div>
+            <button id="wanted_list" class="nav-btn nav-item">
+                <img src="img/tablet_icon_osoby%20poszukiwane.png" alt="osoby poszukiwane">
+            </button>
+            <div class="delay"></div>
+            <button id="license" class="nav-btn nav-item">
+                <img src="img/tablet_icon_wydaj_licencje.png" alt="wydaj licenjce">
+            </button>
+            <div class="delay"></div>
+            <button id="schedule" class="nav-btn nav-item">
+                <img src="img/tablet_icon_taryfikator.png" alt="taryfikator">
+            </button>
+        </nav>
+
+        <div class="page_container">
+
+            <div id="mandate_page" class="page hide">
+
+                <div class="page_heading">
+                    <img src="img/tablet_icon_obecnie_trwa_wystawianie_mandatu.png"
+                         alt="Obecnie trwa wystawianie mandatu">
+                </div>
+
+                <div class="page_main">
+                    <div class="container">
+                        <form>
+                            <label for="mandate_reason" class="mt-2">Powód wystawienia mandatu:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text orange_prepand"></span>
+                                </div>
+                                <textarea class="form-control" id="mandate_reason" rows="3"
+                                          placeholder="Powód wystawienia mandatu"></textarea>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-2">
+                                    <label for="mandate_id" class="">PESEL:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="mandate_id" placeholder="ID">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="mandate_amount">Kwota mandatu:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="mandate_amount"
+                                               placeholder="Wysokość mandatu">
+                                        <div class="input-group-append"><span class="input-group-text">$</span></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="mandate_penalty_points" class="">Liczba punktów karnych:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="mandate_penalty_points"
+                                               placeholder="Liczba punktów karnych">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col">
+                                    <label for="mandate_signature" class="">Podpis:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="mandate_signature"
+                                               placeholder="Stopień Imie Nazwisko [ Nr-odnzaki ]">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="page_bottom page_bottom_buttons">
+                    <div class="container">
+                        <button id="mandate_reset" type="button" class="btn btn-outline-light float-right m-1">
+                            Zresetuj
+                        </button>
+                        <button id="mandate_accept" type="button" class="btn btn-outline-light float-right m-1">
+                            Zatwierdź
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="jail_page" class="page hide">
+
+                <div class="page_heading">
+                    <img src="img/tablet_icon_obecnie_trwa_wysylanie_do_wiezienia.png"
+                         alt="Obecnie trwa wysyłanie do więzienia">
+                </div>
+
+                <div class="page_main">
+                    <div class="container">
+                        <form>
+                            <label for="jail_reason" class="mt-2">Zarzuty:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text orange_prepand"></span>
+                                </div>
+                                <textarea class="form-control" id="jail_reason" rows="3"
+                                          placeholder="Wypisz zarzuty"></textarea>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-2">
+                                    <label for="jail_id" class="">PESEL:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="jail_id" placeholder="ID">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="jail_money">Wysokość grzywny:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="jail_money"
+                                               placeholder="Wysokość grzywny">
+                                        <div class="input-group-append"><span class="input-group-text">$</span></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="jail_judgment" class="">Odsiadka:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="jail_judgment"
+                                               placeholder="Liczba lat odsiadki">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col">
+                                    <label for="jail_signature" class="">Podpis:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="jail_signature"
+                                               placeholder="Stopień Imie Nazwisko [ Nr-odnzaki ]">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="page_bottom page_bottom_buttons">
+                    <div class="container">
+                        <button id="jail_reset" type="button" class="btn btn-outline-light float-right m-1">Zresetuj
+                        </button>
+                        <button id="jail_accept" type="button" class="btn btn-outline-light float-right m-1">Zatwierdź
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="file_page" class="page hide">
+
+                <div class="page_heading">
+                    <img src="img/tablet_icon_obecnie_trwa_sprawdzanie_kartoteki.png"
+                         alt="Obecnie trwa sprawdzanie kartoteki">
+                </div>
+
+                <div class="page_main">
+                    <div class="container">
+                        <form>
+                            <div class="row pt-2">
+                                <div class="col-2">
+                                    <label for="file_id" class="">PESEL:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="file_id" placeholder="ID">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="file_first_name" class="">Imię:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="file_first_name" placeholder="Imię">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="file_second_name" class="">Nazwisko:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="file_second_name"
+                                               placeholder="Nazwisko">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="row mt-2 panel_light pt-1 pb-1">
+                            <div class="col-2 text-center">
+                                <img src="img/tablet_icon_choice.png" alt="typ">
+                            </div>
+                            <div class="col text-center">
+                                <img src="img/tablet_icon_date.png" alt="data">
+                            </div>
+                            <div class="col text-center">
+                                <img src="img/tablet_icon_criminal.png" alt="przestępca">
+                            </div>
+                            <div class="col-2 text-center">
+                                <img src="img/tablet_icon_judgment.png" alt="wyrok">
+                            </div>
+                            <div class="col text-center">
+                                <img src="img/tablet_icon_cop.png" alt="funkcjonariusz">
+                            </div>
+                        </div>
+                        <div class="panel-group" id="file_judgment_container">
+                            <!-- PRZYKLADOWY WPIS START -->
+
+                            <!-- PRZYKLADOWY WPIS KONIEC -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page_bottom page_bottom_buttons">
+                    <div class="container">
+                        <button id="file_reset" type="button" class="btn btn-outline-light float-right m-1">Zresetuj
+                        </button>
+                        <button id="file_search" type="button" class="btn btn-outline-light float-right m-1">Wyszukaj
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="wanted_list_page" class="page hide">
+
+                <div class="page_heading page_heading_wanted">
+                    <img id="search_wanted_img" class="wanted_list_selected" src="img/tablet_icon_obecnie_sprawdzasz_osoby_poszukiwane.png"
+                         alt="Obecnie sprawdzasz osoby poszukiwane">
+                    <img id="add_wanted_img" class="wanted_list_unselected" src="img/tablet_icon_dodaj_nowego_poszukiwanego.png"
+                         alt="Obecnie dodajesz osobę poszukiwaną">
+                    <div id="change_wanted_page" class="change_wanted_page"></div>
+                </div>
+
+                <div class="page_main wanted_list" id="wanted_list_main_1">
+                    <div class="container">
+                        
+                        <div class="panel-group pt-3" id="wanted_list_container">
+                            <!-- PRZYKŁADOWY WPIS START -->
+                            <div class="panel panel_light">
+                                <div class="panel-heading pt-2 pb-2">
+                                    <a data-toggle="collapse" data-parent="#wanted_list_container" href="#wanted_01">
+                                        <div class="container">
+                                            <b>Andy Anderson</b>
+                                            <button type="button" id="delete_wanted_01" class="close" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div id="wanted_01" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="container">
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Data dodania:</b>
+                                                </div>
+                                                <div class="col">
+                                                    27/09/2018 13:41
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Poszukiwany za:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Jazda pod prad | Przekroczenie predkosci w terenie zabudowanym | Jazda bez prawa jazdy | Ucieczka przed policja | Posiadanie kontrabandy
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Opis:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Przysojniak, brązowe włosy, okulary przeciwsłoneczne wiek ok. 35, biały t-shirt, siwa marynarka, kremowe spodnie, buty garniturowe, poruszał się czerwonym Ferrari 488 Italia
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Funkcjonariusz:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Matt Bukks
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- PRZYKŁADOWY WPIS KONIEC -->
+                            
+                            
+                            <!-- PRZYKŁADOWY WPIS START -->
+                            <div class="panel panel_light">
+                                <div class="panel-heading pt-2 pb-2">
+                                    <a data-toggle="collapse" data-parent="#wanted_list_container" href="#wanted_02">
+                                        <div class="container">
+                                            <b>Sylvester Manone</b>
+                                            <button type="button" id="delete_wanted_02" class="close" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div id="wanted_02" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="container">
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Data dodania:</b>
+                                                </div>
+                                                <div class="col">
+                                                    27/09/2018 13:41
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Poszukiwany za:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Jazda pod prad | Przekroczenie predkosci w terenie zabudowanym | Jazda bez prawa jazdy | Ucieczka przed policja | Posiadanie kontrabandy
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Opis:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Przysojniak, brązowe włosy, okulary przeciwsłoneczne wiek ok. 35, biały t-shirt, siwa marynarka, kremowe spodnie, buty garniturowe, poruszał się czerwonym Ferrari 488 Italia
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Funkcjonariusz:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Matt Bukks
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- PRZYKŁADOWY WPIS KONIEC -->
+                            
+                            <!-- PRZYKŁADOWY WPIS START -->
+                            <div class="panel panel_light">
+                                <div class="panel-heading pt-2 pb-2">
+                                    <a data-toggle="collapse" data-parent="#wanted_list_container" href="#wanted_03">
+                                        <div class="container">
+                                            <b>Matt Bukks</b>
+                                            <button type="button" id="delete_wanted_03" class="close" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div id="wanted_03" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="container">
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Data dodania:</b>
+                                                </div>
+                                                <div class="col">
+                                                    27/09/2018 13:41
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Poszukiwany za:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Jazda pod prad | Przekroczenie predkosci w terenie zabudowanym | Jazda bez prawa jazdy | Ucieczka przed policja | Posiadanie kontrabandy
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Opis:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Przysojniak, brązowe włosy, okulary przeciwsłoneczne wiek ok. 35, biały t-shirt, siwa marynarka, kremowe spodnie, buty garniturowe, poruszał się czerwonym Ferrari 488 Italia
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Funkcjonariusz:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Matt Bukks
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- PRZYKŁADOWY WPIS KONIEC -->
+                            
+                            <!-- PRZYKŁADOWY WPIS START -->
+                            <div class="panel panel_light">
+                                <div class="panel-heading pt-2 pb-2">
+                                    <a data-toggle="collapse" data-parent="#wanted_list_container" href="#wanted_04">
+                                        <div class="container">
+                                            <b>Nina Dollores</b>
+                                            <button type="button" id="delete_wanted_04" class="close" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div id="wanted_04" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="container">
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Data dodania:</b>
+                                                </div>
+                                                <div class="col">
+                                                    27/09/2018 13:41
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Poszukiwany za:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Jazda pod prad | Przekroczenie predkosci w terenie zabudowanym | Jazda bez prawa jazdy | Ucieczka przed policja | Posiadanie kontrabandy
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Opis:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Przysojniak, brązowe włosy, okulary przeciwsłoneczne wiek ok. 35, biały t-shirt, siwa marynarka, kremowe spodnie, buty garniturowe, poruszał się czerwonym Ferrari 488 Italia
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4">
+                                                    <b>Funkcjonariusz:</b>
+                                                </div>
+                                                <div class="col">
+                                                    Matt Bukks
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- PRZYKŁADOWY WPIS KONIEC -->
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+
+                <div class="page_bottom" id="wanted_list_bottom_1">
+                </div>
+                
+                <div class="page_main wanted_list hide" id="wanted_list_main_2">
+                    <div class="container">
+                        <form>
+                            <div class="row pt-2">
+                                <div class="col">
+                                    <label for="add_wanted_first_name" class="">Imię:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="add_wanted_first_name"
+                                               placeholder="Imię">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="add_wanted_second_name" class="">Nazwisko:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="add_wanted_second_name"
+                                               placeholder="Nazwisko">
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="add_wanted_reason" class="mt-2">Za co osoba jest poszukiwana:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text orange_prepand"></span>
+                                </div>
+                                <textarea class="form-control" id="add_wanted_reason" rows="2"
+                                          placeholder="Zarzuty osoby poszukiwanej"></textarea>
+                            </div>
+                            <label for="add_wanted_description" class="mt-2">Rysopis poszukiwanego / pojazdu:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text orange_prepand"></span>
+                                </div>
+                                <textarea class="form-control" id="add_wanted_description" rows="2"
+                                          placeholder="Opisz osobę poszukiwaną lub jego pojazd"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="page_bottom page_bottom_buttons hide" id="wanted_list_bottom_2">
+                    <div class="container">
+                        <button id="reset_wanted_person" type="button" class="btn btn-outline-light float-right m-1">
+                            Zresetuj
+                        </button>
+                        <button id="add_wanted_person" type="button" class="btn btn-outline-light float-right m-1">
+                            Zatwierdź
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="license_page" class="page hide">
+
+                <div class="page_heading">
+                    <img src="img/tablet_icon_obecnie_trwa_wydawanie%20licencji.png"
+                         alt="Obecnie trwa wydawanie licencji">
+                </div>
+
+                <div class="page_main">
+                    <div class="container">
+                        <form>
+                            <div class="row pt-2">
+                                <div class="col-2">
+                                    <label for="license_id" class="">PESEL:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="license_id" placeholder="ID">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="license_first_name" class="">Imię:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="license_first_name"
+                                               placeholder="Imię">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="license_second_name" class="">Nazwisko:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="license_second_name"
+                                               placeholder="Nazwisko">
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="license_reason" class="mt-2">Powód wydania licencji:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text orange_prepand"></span>
+                                </div>
+                                <textarea class="form-control" id="license_reason" rows="3"
+                                          placeholder="Wpisz powód nadania licencji"></textarea>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col">
+                                    <label for="license_signature" class="">Podpis:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="license_signature"
+                                               placeholder="Stopień Imie Nazwisko [ Nr-odnzaki ]">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="page_bottom page_bottom_buttons">
+                    <div class="container">
+                        <button id="license_reset" type="button" class="btn btn-outline-light float-right m-1">
+                            Zresetuj
+                        </button>
+                        <button id="license_accept" type="button" class="btn btn-outline-light float-right m-1">
+                            Zatwierdź
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="schedule_page" class="page hide">
+
+                <div class="page_heading">
+                    <img src="img/tablet_icon_wymiar_kar_w_taryfikatorze.png" alt="Wymiar kar w taryfiaktorze">
+                </div>
+
+                <div class="page_main">
+                    <div class="container">
+                        <form>
+                            <div class="row pt-2">
+                                <div class="col-9">
+                                    <label for="schedule_reason">Zarzuty:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <textarea class="form-control" id="schedule_reason" rows="3"
+                                                  placeholder="Zaznacz wykroczenia popełnione przez zatrzymanego aby zarzuty pojawiły się w tym oknie"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <button id="schedule_mandate" type="button" class="btn btn-outline-light">Mandat
+                                    </button>
+                                    <button id="schedule_jail" type="button" class="btn btn-outline-light">Więzienie
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col">
+                                    <label for="schedule_judgment" class="">Odsiadka:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="schedule_judgment"
+                                               placeholder="Liczba lat odsiadki">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="schedule_money">Wysokość grzywny:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="schedule_money"
+                                               placeholder="Grzywna">
+                                        <div class="input-group-append"><span class="input-group-text">$</span></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="schedule_penalty_points" class="">Punkty karne:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span
+                                                class="input-group-text orange_prepand"></span></div>
+                                        <input type="text" class="form-control" id="schedule_penalty_points"
+                                               placeholder="Punkty karne">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" row mt-4">
+                                <div class="col-2 text-center">
+                                    <label for="jailRange"><b>Odsiadka:</b></label>
+                                </div>
+                                <div class="col text-center">
+                                    <input type="range" min="0" max="0" value="0" class="slider"
+                                           id="jailRange">
+                                </div>
+                            </div>
+                            <div class=" row mt-2">
+                                <div class="col-2 text-center">
+                                    <label for="moneyRange"><b>Grzywna:</b></label>
+                                </div>
+                                <div class="col text-center">
+                                    <input type="range" min="0" max="0" value="0" step="100" class="slider"
+                                           id="moneyRange">
+                                </div>
+                            </div>
+
+                            <div class="panel-group" id="schedule_container">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="page_bottom page_bottom_buttons">
+                    <div class="container">
+                        <button id="schedule_reset" type="button" class="btn btn-outline-light float-right m-1">
+                            Zresetuj
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!--- JS SCRIPTS --->
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="http://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="js/tablet.js"></script>
+
+<script src="js/mustache.min.js"></script>
+    
+</body>

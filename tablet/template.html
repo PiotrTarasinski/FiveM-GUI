@@ -1,0 +1,81 @@
+<script id="tpl-files" type="text/html">
+    {{#files}}
+    <div class="panel panel_light">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#file_judgment_container" href="#judgment_{{id}}">
+                <div class="row mt-2">
+                    <div class="col-2 text-center">
+                        <img class="{{icon}}" src="img/{{imgName}}.png"
+                             alt="ikona wiezienia">
+                    </div>
+                    <div class="col text-center">
+                        {{date}}
+                        <br>
+                        {{hour}}
+                    </div>
+                    <div class="col text-center">
+                        {{police_name}}
+                        <br>
+                        {{police_surname}}
+                    </div>
+                    <div class="col-2 text-center">
+                        {{time}} lat
+                        <br>
+                        {{money}} $
+                    </div>
+                    <div class="col text-center">
+                        {{name}}
+                        <br>
+                        {{surname}}
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="judgment_{{id}}" class="panel-collapse collapse">
+            <div class="panel-body text-center">
+                <p>{{reason}}</p>
+            </div>
+        </div>
+    </div>
+    {{/files}}
+</script>
+
+<script id="tpl-category" type="text/html">
+    {{#categories}}
+    <div class="panel panel_light">
+        <div class="panel-heading text-center pt-1 pb-1">
+            <a data-toggle="collapse" data-parent="#schedule_container" href="#category_{{id}}">
+                <div><b>{{name}}</b></div>
+            </a>
+        </div>
+        <div id="category_{{id}}" class="panel-collapse collapse">
+            <div class="panel-body text-center">
+                {{#punishments}}
+                <div class="schedule_offense_body">
+                    <div class="schedule_offense_checkbox">
+                        <div class="form-check">
+                            <input class="form-check-input schedule-checkbox" type="checkbox"
+                                   data-description="{{reason}}"
+                                   data-jail-min="{{jailMin}}" data-jail-max="{{jailMax}}" data-money-min="{{moneyMin}}"
+                                   data-money-max="{{moneyMax}}" data-points="{{points}}">
+                        </div>
+                    </div>
+                    <div class="schedule_offense_heading">
+                        {{reason}}
+                    </div>
+                    <div class="schedule_offense_jail">
+                        {{jail}}
+                    </div>
+                    <div class="schedule_offense_mane">
+                        {{money}}
+                    </div>
+                    <div class="schedule_offense_penalty_points">
+                        {{points}} pkt
+                    </div>
+                </div>
+                {{/punishments}}
+            </div>
+        </div>
+    </div>
+    {{/categories}}
+</script>
